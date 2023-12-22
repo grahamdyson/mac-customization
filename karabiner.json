@@ -1,0 +1,2149 @@
+{
+	"global": {
+		"ask_for_confirmation_before_quitting": true,
+		"check_for_updates_on_startup": true,
+		"show_in_menu_bar": true,
+		"show_profile_name_in_menu_bar": false,
+		"unsafe_ui": false
+	},
+	"profiles": [
+		{
+			"complex_modifications": {
+				"parameters": {
+					"basic.simultaneous_threshold_milliseconds": 50,
+					"basic.to_delayed_action_delay_milliseconds": 500,
+					"basic.to_if_alone_timeout_milliseconds": 1000,
+					"basic.to_if_held_down_threshold_milliseconds": 500,
+					"mouse_motion_to_scroll.speed": 100
+				},
+				"rules": [
+					{
+						"description": "Edge cmd+d -> cmd+l | open location",
+						"manipulators": [
+							{
+								"conditions": [
+									{
+										"bundle_identifiers": [
+											"com.brave.Browser",
+											"com.microsoft.edgemac"
+										],
+										"type": "frontmost_application_if"
+									}
+								],
+								"from": {
+									"key_code": "d",
+									"modifiers": {
+										"mandatory": [
+											"command"
+										]
+									}
+								},
+								"to": [
+									{
+										"key_code": "l",
+										"modifiers": [
+											"left_command"
+										]
+									}
+								],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "Finder ctrl+d -> cmd+backspace | delete",
+						"manipulators": [
+							{
+								"conditions": [
+									{
+										"bundle_identifiers": [
+											"com.apple.finder"
+										],
+										"type": "frontmost_application_if"
+									}
+								],
+								"from": {
+									"key_code": "d",
+									"modifiers": {
+										"mandatory": [
+											"control"
+										]
+									}
+								},
+								"to": [
+									{
+										"key_code": "delete_or_backspace",
+										"modifiers": [
+											"left_command"
+										]
+									}
+								],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "Finder f2 -> return | enter",
+						"manipulators": [
+							{
+								"conditions": [
+									{
+										"bundle_identifiers": [
+											"com.apple.finder"
+										],
+										"type": "frontmost_application_if"
+									}
+								],
+								"from": {
+									"key_code": "f2"
+								},
+								"to": [
+									{
+										"key_code": "return_or_enter"
+									}
+								],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "Finder ctrl+x -> cmd+c & finder_cut=true",
+						"manipulators": [
+							{
+								"conditions": [
+									{
+										"bundle_identifiers": [
+											"com.apple.finder"
+										],
+										"type": "frontmost_application_if"
+									}
+								],
+								"from": {
+									"key_code": "x",
+									"modifiers": {
+										"mandatory": [
+											"control"
+										]
+									}
+								},
+								"to": [
+									{
+										"key_code": "c",
+										"modifiers": [
+											"left_command"
+										]
+									},
+									{
+										"set_variable": {
+											"name": "finder_cut",
+											"value": true
+										}
+									}
+								],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "Finder ctrl+c -> cmd+c & finder_cut=false",
+						"manipulators": [
+							{
+								"conditions": [
+									{
+										"bundle_identifiers": [
+											"com.apple.finder"
+										],
+										"type": "frontmost_application_if"
+									}
+								],
+								"from": {
+									"key_code": "c",
+									"modifiers": {
+										"mandatory": [
+											"control"
+										]
+									}
+								},
+								"to": [
+									{
+										"key_code": "c",
+										"modifiers": [
+											"left_command"
+										]
+									},
+									{
+										"set_variable": {
+											"name": "finder_cut",
+											"value": false
+										}
+									}
+								],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "Finder & finder_cut ctrl+v -> cmd+opt+v & finder_cut=false",
+						"manipulators": [
+							{
+								"conditions": [
+									{
+										"bundle_identifiers": [
+											"com.apple.finder"
+										],
+										"type": "frontmost_application_if"
+									},
+									{
+										"name": "finder_cut",
+										"type": "variable_if",
+										"value": true
+									}
+								],
+								"from": {
+									"key_code": "v",
+									"modifiers": {
+										"mandatory": [
+											"control"
+										]
+									}
+								},
+								"to": [
+									{
+										"key_code": "v",
+										"modifiers": [
+											"left_command",
+											"left_option"
+										]
+									},
+									{
+										"set_variable": {
+											"name": "finder_cut",
+											"value": false
+										}
+									}
+								],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "ctrl+keypad 5 -> cmd+click | Mouse Keys multiselect",
+						"manipulators": [
+							{
+								"from": {
+									"key_code": "keypad_5",
+									"modifiers": {
+										"mandatory": [
+											"control"
+										]
+									}
+								},
+								"to": [
+									{
+										"modifiers": [
+											"left_command"
+										],
+										"pointing_button": "button1"
+									}
+								],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "ctrl left/right (shft) -> cmd left/right (shft) | move word",
+						"manipulators": [
+							{
+								"from": {
+									"key_code": "left_arrow",
+									"modifiers": {
+										"mandatory": [
+											"control"
+										],
+										"optional": [
+											"shift",
+											"caps_lock"
+										]
+									}
+								},
+								"to": [
+									{
+										"key_code": "left_arrow",
+										"modifiers": [
+											"left_option"
+										]
+									}
+								],
+								"type": "basic"
+							},
+							{
+								"from": {
+									"key_code": "right_arrow",
+									"modifiers": {
+										"mandatory": [
+											"control"
+										],
+										"optional": [
+											"shift",
+											"caps_lock"
+										]
+									}
+								},
+								"to": [
+									{
+										"key_code": "right_arrow",
+										"modifiers": [
+											"left_option"
+										]
+									}
+								],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "home/end (shft) -> cmd+left/right (shft) | move start/end of paragraph/line (not Edge DefaultKeyBinding.dic used instead)",
+						"manipulators": [
+							{
+								"conditions": [
+									{
+										"bundle_identifiers": [
+											"com.brave.Browser",
+											"com.microsoft.edgemac",
+											"com.microsoft.VSCode"
+										],
+										"type": "frontmost_application_unless"
+									}
+								],
+								"from": {
+									"key_code": "home",
+									"modifiers": {
+										"optional": [
+											"shift",
+											"caps_lock"
+										]
+									}
+								},
+								"to": [
+									{
+										"key_code": "left_arrow",
+										"modifiers": [
+											"command"
+										]
+									}
+								],
+								"type": "basic"
+							},
+							{
+								"conditions": [
+									{
+										"bundle_identifiers": [
+											"com.brave.Browser",
+											"com.microsoft.edgemac",
+											"com.microsoft.VSCode"
+										],
+										"type": "frontmost_application_unless"
+									}
+								],
+								"from": {
+									"key_code": "end",
+									"modifiers": {
+										"optional": [
+											"shift",
+											"caps_lock"
+										]
+									}
+								},
+								"to": [
+									{
+										"key_code": "right_arrow",
+										"modifiers": [
+											"command"
+										]
+									}
+								],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "ctrl+home/end (shft) -> cmd+up/down (shft) | move start/end of file",
+						"manipulators": [
+							{
+								"conditions": [
+									{
+										"bundle_identifiers": [
+											"com.microsoft.VSCode"
+										],
+										"type": "frontmost_application_unless"
+									}
+								],
+								"from": {
+									"key_code": "home",
+									"modifiers": {
+										"mandatory": [
+											"control"
+										],
+										"optional": [
+											"shift",
+											"caps_lock"
+										]
+									}
+								},
+								"to": [
+									{
+										"key_code": "up_arrow",
+										"modifiers": [
+											"command"
+										]
+									}
+								],
+								"type": "basic"
+							},
+							{
+								"conditions": [
+									{
+										"bundle_identifiers": [
+											"com.microsoft.VSCode"
+										],
+										"type": "frontmost_application_unless"
+									}
+								],
+								"from": {
+									"key_code": "end",
+									"modifiers": {
+										"mandatory": [
+											"control"
+										],
+										"optional": [
+											"shift",
+											"caps_lock"
+										]
+									}
+								},
+								"to": [
+									{
+										"key_code": "down_arrow",
+										"modifiers": [
+											"command"
+										]
+									}
+								],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "cmd -> (ctrl+cmd+opt+shift)+m | open menu",
+						"manipulators": [
+							{
+								"from": {
+									"key_code": "left_command",
+									"modifiers": {
+										"optional": [
+											"caps_lock"
+										]
+									}
+								},
+								"to": {
+									"key_code": "left_command"
+								},
+								"to_if_alone": [
+									{
+										"key_code": "m",
+										"modifiers": [
+											"left_control",
+											"left_command",
+											"left_option",
+											"left_shift"
+										]
+									}
+								],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "opt -> cmd+space | open spotlight",
+						"manipulators": [
+							{
+								"from": {
+									"key_code": "left_option",
+									"modifiers": {
+										"optional": [
+											"caps_lock"
+										]
+									}
+								},
+								"to": {
+									"key_code": "left_option"
+								},
+								"to_if_alone": [
+									{
+										"key_code": "spacebar",
+										"modifiers": [
+											"command"
+										]
+									}
+								],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "opt+left/right/up -> (ctrl+cmd+opt+shift)+left/right/up | move left/right/maximize window (e.g. for Rectangle app)",
+						"manipulators": [
+							{
+								"from": {
+									"key_code": "left_arrow",
+									"modifiers": {
+										"mandatory": [
+											"left_option"
+										]
+									}
+								},
+								"to": [
+									{
+										"key_code": "left_arrow",
+										"modifiers": [
+											"left_control",
+											"left_command",
+											"left_option",
+											"left_shift"
+										]
+									}
+								],
+								"type": "basic"
+							},
+							{
+								"from": {
+									"key_code": "right_arrow",
+									"modifiers": {
+										"mandatory": [
+											"left_option"
+										]
+									}
+								},
+								"to": [
+									{
+										"key_code": "right_arrow",
+										"modifiers": [
+											"left_control",
+											"left_command",
+											"left_option",
+											"left_shift"
+										]
+									}
+								],
+								"type": "basic"
+							},
+							{
+								"from": {
+									"key_code": "up_arrow",
+									"modifiers": {
+										"mandatory": [
+											"left_option"
+										]
+									}
+								},
+								"to": [
+									{
+										"key_code": "up_arrow",
+										"modifiers": [
+											"left_control",
+											"left_command",
+											"left_option",
+											"left_shift"
+										]
+									}
+								],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "opt+down -> cmd+m | minimize window",
+						"manipulators": [
+							{
+								"from": {
+									"key_code": "down_arrow",
+									"modifiers": {
+										"mandatory": [
+											"left_option"
+										]
+									}
+								},
+								"to": [
+									{
+										"key_code": "m",
+										"modifiers": [
+											"left_command"
+										]
+									}
+								],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "opt+b -> ctrl+F8 | focus status menus",
+						"manipulators": [
+							{
+								"from": {
+									"key_code": "b",
+									"modifiers": {
+										"mandatory": [
+											"left_option"
+										]
+									}
+								},
+								"to": [
+									{
+										"key_code": "f8",
+										"modifiers": [
+											"left_control"
+										]
+									}
+								],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "context menu -> shft+f10 | context menu",
+						"manipulators": [
+							{
+								"from": {
+									"key_code": "application"
+								},
+								"to": [
+									{
+										"key_code": "f10",
+										"modifiers": [
+											"left_shift"
+										]
+									}
+								],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "right option (built-in keyboard) -> shft+f10 | context menu",
+						"manipulators": [
+							{
+								"conditions": [
+									{
+										"type": "device_if",
+										"identifiers": [
+											{
+												"is_built_in_keyboard": true,
+												"product_id": 0,
+												"vendor_id": 0
+											}
+										]
+									}
+								],
+								"from": {
+									"key_code": "right_option"
+								},
+								"to": [
+									{
+										"key_code": "f10",
+										"modifiers": [
+											"left_shift"
+										]
+									}
+								],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "print screen -> shft+ctrl+cmd+3",
+						"manipulators": [
+							{
+								"from": {
+									"key_code": "print_screen"
+								},
+								"to": [
+									{
+										"key_code": "3",
+										"modifiers": [
+											"left_shift",
+											"left_control",
+											"left_command"
+										]
+									}
+								],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "print screen+opt -> shft+ctrl+cmd+4",
+						"manipulators": [
+							{
+								"from": {
+									"key_code": "print_screen",
+									"modifiers": {
+										"mandatory": [
+											"left_command"
+										]
+									}
+								},
+								"to": [
+									{
+										"key_code": "4",
+										"modifiers": [
+											"left_shift",
+											"left_control",
+											"left_command"
+										]
+									}
+								],
+								"to_delayed_action": {
+									"to_if_invoked": [
+										{
+											"key_code": "spacebar"
+										}
+									]
+								},
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "f3 (shft) -> cmd+g (shft) | find next/previous",
+						"manipulators": [
+							{
+								"conditions": [
+									{
+										"bundle_identifiers": [
+											"com.microsoft.VSCode"
+										],
+										"type": "frontmost_application_unless"
+									}
+								],
+								"from": {
+									"key_code": "f3",
+									"modifiers": {
+										"optional": [
+											"shift",
+											"caps_lock"
+										]
+									}
+								},
+								"to": [
+									{
+										"key_code": "g",
+										"modifiers": [
+											"left_command"
+										]
+									}
+								],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "cmd+left/right -> cmd+[/] | back",
+						"manipulators": [
+							{
+								"conditions": [
+									{
+										"bundle_identifiers": [
+											"com.microsoft.VSCode"
+										],
+										"type": "frontmost_application_unless"
+									}
+								],
+								"from": {
+									"key_code": "left_arrow",
+									"modifiers": {
+										"mandatory": [
+											"command"
+										]
+									}
+								},
+								"to": [
+									{
+										"key_code": "open_bracket",
+										"modifiers": [
+											"left_command"
+										]
+									}
+								],
+								"type": "basic"
+							},
+							{
+								"conditions": [
+									{
+										"bundle_identifiers": [
+											"com.microsoft.VSCode"
+										],
+										"type": "frontmost_application_unless"
+									}
+								],
+								"from": {
+									"key_code": "right_arrow",
+									"modifiers": {
+										"mandatory": [
+											"command"
+										]
+									}
+								},
+								"to": [
+									{
+										"key_code": "close_bracket",
+										"modifiers": [
+											"left_command"
+										]
+									}
+								],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "cmd+f4 -> cmd+q | quit",
+						"manipulators": [
+							{
+								"conditions": [
+									{
+										"bundle_identifiers": [
+											"com.microsoft.VSCode"
+										],
+										"type": "frontmost_application_unless"
+									}
+								],
+								"from": {
+									"key_code": "f4",
+									"modifiers": {
+										"mandatory": [
+											"command"
+										]
+									}
+								},
+								"to": [
+									{
+										"key_code": "q",
+										"modifiers": [
+											"left_command"
+										]
+									}
+								],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "opt+m -> cmd+h opt-cmd+h delay cmd+m | minimize all",
+						"manipulators": [
+							{
+								"from": {
+									"key_code": "m",
+									"modifiers": {
+										"mandatory": [
+											"option"
+										]
+									}
+								},
+								"to": [
+									{
+										"key_code": "h",
+										"modifiers": [
+											"left_command"
+										]
+									},
+									{
+										"key_code": "h",
+										"modifiers": [
+											"left_option",
+											"left_command"
+										]
+									}
+								],
+								"to_delayed_action": {
+									"to_if_invoked": [
+										{
+											"key_code": "m",
+											"modifiers": [
+												"left_command"
+											]
+										}
+									]
+								},
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "opt+t -> ctrl+f3 | focus dock",
+						"manipulators": [
+							{
+								"from": {
+									"key_code": "t",
+									"modifiers": {
+										"mandatory": [
+											"option"
+										]
+									}
+								},
+								"to": [
+									{
+										"key_code": "f3",
+										"modifiers": [
+											"left_control"
+										]
+									}
+								],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "ctrl+f4 -> cmd+w | close window/tab",
+						"manipulators": [
+							{
+								"conditions": [
+									{
+										"bundle_identifiers": [
+											"com.microsoft.VSCode"
+										],
+										"type": "frontmost_application_unless"
+									}
+								],
+								"from": {
+									"key_code": "f4",
+									"modifiers": {
+										"mandatory": [
+											"control"
+										]
+									}
+								},
+								"to": [
+									{
+										"key_code": "w",
+										"modifiers": [
+											"left_command"
+										]
+									}
+								],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "ctrl+page-down -> ctrl+tab | next tab",
+						"manipulators": [
+							{
+								"conditions": [
+									{
+										"bundle_identifiers": [
+											"com.microsoft.VSCode"
+										],
+										"type": "frontmost_application_unless"
+									}
+								],
+								"from": {
+									"key_code": "page_down",
+									"modifiers": {
+										"mandatory": [
+											"control"
+										]
+									}
+								},
+								"to": [
+									{
+										"key_code": "tab",
+										"modifiers": [
+											"left_control"
+										]
+									}
+								],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "ctrl+page-up -> shft+ctrl+tab | previous tab",
+						"manipulators": [
+							{
+								"conditions": [
+									{
+										"bundle_identifiers": [
+											"com.microsoft.VSCode"
+										],
+										"type": "frontmost_application_unless"
+									}
+								],
+								"from": {
+									"key_code": "page_up",
+									"modifiers": {
+										"mandatory": [
+											"control"
+										]
+									}
+								},
+								"to": [
+									{
+										"key_code": "tab",
+										"modifiers": [
+											"left_shift",
+											"left_control"
+										]
+									}
+								],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "ctrl+enter (shift) -> cmd+enter (shift) | send",
+						"manipulators": [
+							{
+								"conditions": [
+									{
+										"bundle_identifiers": [
+											"com.microsoft.VSCode"
+										],
+										"type": "frontmost_application_unless"
+									}
+								],
+								"from": {
+									"key_code": "return_or_enter",
+									"modifiers": {
+										"mandatory": [
+											"control"
+										],
+										"optional": [
+											"shift",
+											"caps_lock"
+										]
+									}
+								},
+								"to": [
+									{
+										"key_code": "return_or_enter",
+										"modifiers": [
+											"left_command"
+										]
+									}
+								],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "ctrl+a (shift) -> cmd+a (shift) | select all (excludes Zoom)",
+						"manipulators": [
+							{
+								"conditions": [
+									{
+										"bundle_identifiers": [
+											"com.microsoft.VSCode",
+											"us.zoom.xos"
+										],
+										"type": "frontmost_application_unless"
+									}
+								],
+								"from": {
+									"key_code": "a",
+									"modifiers": {
+										"mandatory": [
+											"control"
+										],
+										"optional": [
+											"shift",
+											"caps_lock"
+										]
+									}
+								},
+								"to": [
+									{
+										"key_code": "a",
+										"modifiers": [
+											"left_command"
+										]
+									}
+								],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "ctrl+b (shift) -> cmd+b (shift) | bold",
+						"manipulators": [
+							{
+								"conditions": [
+									{
+										"bundle_identifiers": [
+											"com.microsoft.VSCode"
+										],
+										"type": "frontmost_application_unless"
+									}
+								],
+								"from": {
+									"key_code": "b",
+									"modifiers": {
+										"mandatory": [
+											"control"
+										],
+										"optional": [
+											"shift",
+											"caps_lock"
+										]
+									}
+								},
+								"to": [
+									{
+										"key_code": "b",
+										"modifiers": [
+											"left_command"
+										]
+									}
+								],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "ctrl+c (shft) -> cmd+c (shft) | copy",
+						"manipulators": [
+							{
+								"conditions": [
+									{
+										"bundle_identifiers": [
+											"com.microsoft.VSCode"
+										],
+										"type": "frontmost_application_unless"
+									}
+								],
+								"from": {
+									"key_code": "c",
+									"modifiers": {
+										"mandatory": [
+											"control"
+										],
+										"optional": [
+											"shift",
+											"caps_lock"
+										]
+									}
+								},
+								"to": [
+									{
+										"key_code": "c",
+										"modifiers": [
+											"left_command"
+										]
+									}
+								],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "ctrl+d (shft) -> cmd+d (shft) | deselect",
+						"manipulators": [
+							{
+								"conditions": [
+									{
+										"bundle_identifiers": [
+											"com.microsoft.VSCode"
+										],
+										"type": "frontmost_application_unless"
+									}
+								],
+								"from": {
+									"key_code": "d",
+									"modifiers": {
+										"mandatory": [
+											"control"
+										],
+										"optional": [
+											"shift",
+											"caps_lock"
+										]
+									}
+								},
+								"to": [
+									{
+										"key_code": "d",
+										"modifiers": [
+											"left_command"
+										]
+									}
+								],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "ctrl+f (shft) -> cmd+f (shft) | find",
+						"manipulators": [
+							{
+								"conditions": [
+									{
+										"bundle_identifiers": [
+											"com.microsoft.VSCode"
+										],
+										"type": "frontmost_application_unless"
+									}
+								],
+								"from": {
+									"key_code": "f",
+									"modifiers": {
+										"mandatory": [
+											"control"
+										],
+										"optional": [
+											"shift",
+											"caps_lock"
+										]
+									}
+								},
+								"to": [
+									{
+										"key_code": "f",
+										"modifiers": [
+											"left_command"
+										]
+									}
+								],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "ctrl+i (shft) -> cmd+i (shft) | italic",
+						"manipulators": [
+							{
+								"conditions": [
+									{
+										"bundle_identifiers": [
+											"com.microsoft.VSCode"
+										],
+										"type": "frontmost_application_unless"
+									}
+								],
+								"from": {
+									"key_code": "i",
+									"modifiers": {
+										"mandatory": [
+											"control"
+										],
+										"optional": [
+											"shift",
+											"caps_lock"
+										]
+									}
+								},
+								"to": [
+									{
+										"key_code": "i",
+										"modifiers": [
+											"left_command"
+										]
+									}
+								],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "ctrl+n (shft) -> cmd+n (shft) | new",
+						"manipulators": [
+							{
+								"conditions": [
+									{
+										"bundle_identifiers": [
+											"com.microsoft.VSCode"
+										],
+										"type": "frontmost_application_unless"
+									}
+								],
+								"from": {
+									"key_code": "n",
+									"modifiers": {
+										"mandatory": [
+											"control"
+										],
+										"optional": [
+											"shift",
+											"caps_lock"
+										]
+									}
+								},
+								"to": [
+									{
+										"key_code": "n",
+										"modifiers": [
+											"left_command"
+										]
+									}
+								],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "ctrl+s (shft) -> cmd+s (shft) | open tab",
+						"manipulators": [
+							{
+								"conditions": [
+									{
+										"bundle_identifiers": [
+											"com.microsoft.VSCode"
+										],
+										"type": "frontmost_application_unless"
+									}
+								],
+								"from": {
+									"key_code": "s",
+									"modifiers": {
+										"mandatory": [
+											"control"
+										],
+										"optional": [
+											"shift",
+											"caps_lock"
+										]
+									}
+								},
+								"to": [
+									{
+										"key_code": "s",
+										"modifiers": [
+											"right_command"
+										]
+									}
+								],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "ctrl+t (shft) -> cmd+t (shft) | open tab",
+						"manipulators": [
+							{
+								"conditions": [
+									{
+										"bundle_identifiers": [
+											"com.microsoft.VSCode"
+										],
+										"type": "frontmost_application_unless"
+									}
+								],
+								"from": {
+									"key_code": "t",
+									"modifiers": {
+										"mandatory": [
+											"control"
+										],
+										"optional": [
+											"shift",
+											"caps_lock"
+										]
+									}
+								},
+								"to": [
+									{
+										"key_code": "t",
+										"modifiers": [
+											"right_command"
+										]
+									}
+								],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "ctrl+u (shft) -> cmd+u (shft) | underline",
+						"manipulators": [
+							{
+								"conditions": [
+									{
+										"bundle_identifiers": [
+											"com.microsoft.VSCode"
+										],
+										"type": "frontmost_application_unless"
+									}
+								],
+								"from": {
+									"key_code": "u",
+									"modifiers": {
+										"mandatory": [
+											"control"
+										],
+										"optional": [
+											"shift",
+											"caps_lock"
+										]
+									}
+								},
+								"to": [
+									{
+										"key_code": "u",
+										"modifiers": [
+											"left_command"
+										]
+									}
+								],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "ctrl+r (shft) -> cmd+r (shft) | reload",
+						"manipulators": [
+							{
+								"conditions": [
+									{
+										"bundle_identifiers": [
+											"com.microsoft.VSCode"
+										],
+										"type": "frontmost_application_unless"
+									}
+								],
+								"from": {
+									"key_code": "r",
+									"modifiers": {
+										"mandatory": [
+											"control"
+										],
+										"optional": [
+											"shift",
+											"caps_lock"
+										]
+									}
+								},
+								"to": [
+									{
+										"key_code": "r",
+										"modifiers": [
+											"left_command"
+										]
+									}
+								],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "ctrl+v (shft) -> cmd+v (shft) | paste  (excludes Zoom)",
+						"manipulators": [
+							{
+								"conditions": [
+									{
+										"bundle_identifiers": [
+											"com.microsoft.VSCode",
+											"us.zoom.xos"
+										],
+										"type": "frontmost_application_unless"
+									}
+								],
+								"from": {
+									"key_code": "v",
+									"modifiers": {
+										"mandatory": [
+											"control"
+										],
+										"optional": [
+											"shift",
+											"caps_lock"
+										]
+									}
+								},
+								"to": [
+									{
+										"key_code": "v",
+										"modifiers": [
+											"left_command"
+										]
+									}
+								],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "ctrl+x (shft) -> cmd+x (shft) | cut",
+						"manipulators": [
+							{
+								"conditions": [
+									{
+										"bundle_identifiers": [
+											"com.microsoft.VSCode"
+										],
+										"type": "frontmost_application_unless"
+									}
+								],
+								"from": {
+									"key_code": "x",
+									"modifiers": {
+										"mandatory": [
+											"control"
+										],
+										"optional": [
+											"shift",
+											"caps_lock"
+										]
+									}
+								},
+								"to": [
+									{
+										"key_code": "x",
+										"modifiers": [
+											"left_command"
+										]
+									}
+								],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "ctrl+y -> shft+cmd+z | redo",
+						"manipulators": [
+							{
+								"conditions": [
+									{
+										"bundle_identifiers": [
+											"com.microsoft.VSCode"
+										],
+										"type": "frontmost_application_unless"
+									}
+								],
+								"from": {
+									"key_code": "y",
+									"modifiers": {
+										"mandatory": [
+											"control"
+										]
+									}
+								},
+								"to": [
+									{
+										"key_code": "z",
+										"modifiers": [
+											"left_command",
+											"left_shift"
+										]
+									}
+								],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "ctrl+z (shft) -> cmd+z (shft) | undo",
+						"manipulators": [
+							{
+								"conditions": [
+									{
+										"bundle_identifiers": [
+											"com.microsoft.VSCode"
+										],
+										"type": "frontmost_application_unless"
+									}
+								],
+								"from": {
+									"key_code": "z",
+									"modifiers": {
+										"mandatory": [
+											"control"
+										],
+										"optional": [
+											"shift",
+											"caps_lock"
+										]
+									}
+								},
+								"to": [
+									{
+										"key_code": "z",
+										"modifiers": [
+											"left_command"
+										]
+									}
+								],
+								"type": "basic"
+							}
+						]
+					}
+				]
+			},
+			"devices": [
+				{
+					"disable_built_in_keyboard_if_exists": false,
+					"fn_function_keys": [],
+					"identifiers": {
+						"is_keyboard": true,
+						"is_pointing_device": false,
+						"product_id": 0,
+						"vendor_id": 0
+					},
+					"ignore": false,
+					"manipulate_caps_lock_led": true,
+					"simple_modifications": [
+						{
+							"from": {
+								"key_code": "grave_accent_and_tilde"
+							},
+							"to": [
+								{
+									"key_code": "non_us_backslash"
+								}
+							]
+						},
+						{
+							"from": {
+								"key_code": "non_us_backslash"
+							},
+							"to": [
+								{
+									"key_code": "grave_accent_and_tilde"
+								}
+							]
+						}
+					],
+					"treat_as_built_in_keyboard": false
+				},
+				{
+					"disable_built_in_keyboard_if_exists": false,
+					"fn_function_keys": [],
+					"identifiers": {
+						"is_keyboard": false,
+						"is_pointing_device": true,
+						"product_id": 0,
+						"vendor_id": 0
+					},
+					"ignore": true,
+					"manipulate_caps_lock_led": false,
+					"simple_modifications": [],
+					"treat_as_built_in_keyboard": false
+				},
+				{
+					"disable_built_in_keyboard_if_exists": false,
+					"fn_function_keys": [],
+					"identifiers": {
+						"is_keyboard": true,
+						"is_pointing_device": false,
+						"product_id": 8247,
+						"vendor_id": 9456
+					},
+					"ignore": false,
+					"manipulate_caps_lock_led": true,
+					"simple_modifications": [
+						{
+							"from": {
+								"key_code": "left_command"
+							},
+							"to": [
+								{
+									"key_code": "left_option"
+								}
+							]
+						},
+						{
+							"from": {
+								"key_code": "left_option"
+							},
+							"to": [
+								{
+									"key_code": "left_command"
+								}
+							]
+						},
+						{
+							"from": {
+								"key_code": "right_command"
+							},
+							"to": [
+								{
+									"key_code": "right_option"
+								}
+							]
+						},
+						{
+							"from": {
+								"key_code": "right_option"
+							},
+							"to": [
+								{
+									"key_code": "right_command"
+								}
+							]
+						}
+					],
+					"treat_as_built_in_keyboard": false
+				},
+				{
+					"disable_built_in_keyboard_if_exists": false,
+					"fn_function_keys": [],
+					"identifiers": {
+						"is_keyboard": true,
+						"is_pointing_device": false,
+						"product_id": 1957,
+						"vendor_id": 1118
+					},
+					"ignore": true,
+					"manipulate_caps_lock_led": true,
+					"simple_modifications": [],
+					"treat_as_built_in_keyboard": false
+				},
+				{
+					"disable_built_in_keyboard_if_exists": false,
+					"fn_function_keys": [],
+					"identifiers": {
+						"is_keyboard": false,
+						"is_pointing_device": true,
+						"product_id": 1957,
+						"vendor_id": 1118
+					},
+					"ignore": true,
+					"manipulate_caps_lock_led": false,
+					"simple_modifications": [],
+					"treat_as_built_in_keyboard": false
+				},
+				{
+					"disable_built_in_keyboard_if_exists": false,
+					"fn_function_keys": [],
+					"identifiers": {
+						"is_keyboard": true,
+						"is_pointing_device": true,
+						"product_id": 61453,
+						"vendor_id": 65261
+					},
+					"ignore": true,
+					"manipulate_caps_lock_led": true,
+					"simple_modifications": [],
+					"treat_as_built_in_keyboard": false
+				},
+				{
+					"disable_built_in_keyboard_if_exists": false,
+					"fn_function_keys": [],
+					"identifiers": {
+						"is_keyboard": true,
+						"is_pointing_device": false,
+						"product_id": 48879,
+						"vendor_id": 65261
+					},
+					"ignore": false,
+					"manipulate_caps_lock_led": true,
+					"simple_modifications": [],
+					"treat_as_built_in_keyboard": false
+				},
+				{
+					"disable_built_in_keyboard_if_exists": false,
+					"fn_function_keys": [],
+					"identifiers": {
+						"is_keyboard": false,
+						"is_pointing_device": true,
+						"product_id": 48879,
+						"vendor_id": 65261
+					},
+					"ignore": true,
+					"manipulate_caps_lock_led": false,
+					"simple_modifications": [],
+					"treat_as_built_in_keyboard": false
+				}
+			],
+			"fn_function_keys": [
+				{
+					"from": {
+						"key_code": "f1"
+					},
+					"to": [
+						{
+							"consumer_key_code": "display_brightness_decrement"
+						}
+					]
+				},
+				{
+					"from": {
+						"key_code": "f2"
+					},
+					"to": [
+						{
+							"consumer_key_code": "display_brightness_increment"
+						}
+					]
+				},
+				{
+					"from": {
+						"key_code": "f3"
+					},
+					"to": [
+						{
+							"apple_vendor_keyboard_key_code": "mission_control"
+						}
+					]
+				},
+				{
+					"from": {
+						"key_code": "f4"
+					},
+					"to": [
+						{
+							"apple_vendor_keyboard_key_code": "spotlight"
+						}
+					]
+				},
+				{
+					"from": {
+						"key_code": "f5"
+					},
+					"to": [
+						{
+							"consumer_key_code": "dictation"
+						}
+					]
+				},
+				{
+					"from": {
+						"key_code": "f6"
+					},
+					"to": [
+						{
+							"key_code": "f6"
+						}
+					]
+				},
+				{
+					"from": {
+						"key_code": "f7"
+					},
+					"to": [
+						{
+							"consumer_key_code": "rewind"
+						}
+					]
+				},
+				{
+					"from": {
+						"key_code": "f8"
+					},
+					"to": [
+						{
+							"consumer_key_code": "play_or_pause"
+						}
+					]
+				},
+				{
+					"from": {
+						"key_code": "f9"
+					},
+					"to": [
+						{
+							"consumer_key_code": "fast_forward"
+						}
+					]
+				},
+				{
+					"from": {
+						"key_code": "f10"
+					},
+					"to": [
+						{
+							"consumer_key_code": "mute"
+						}
+					]
+				},
+				{
+					"from": {
+						"key_code": "f11"
+					},
+					"to": [
+						{
+							"consumer_key_code": "volume_decrement"
+						}
+					]
+				},
+				{
+					"from": {
+						"key_code": "f12"
+					},
+					"to": [
+						{
+							"consumer_key_code": "volume_increment"
+						}
+					]
+				}
+			],
+			"name": "Windows Like",
+			"parameters": {
+				"delay_milliseconds_before_open_device": 1000
+			},
+			"selected": true,
+			"simple_modifications": [],
+			"virtual_hid_keyboard": {
+				"country_code": 0,
+				"indicate_sticky_modifier_keys_state": true,
+				"mouse_key_xy_scale": 100
+			}
+		},
+		{
+			"complex_modifications": {
+				"parameters": {
+					"basic.simultaneous_threshold_milliseconds": 50,
+					"basic.to_delayed_action_delay_milliseconds": 500,
+					"basic.to_if_alone_timeout_milliseconds": 1000,
+					"basic.to_if_held_down_threshold_milliseconds": 500,
+					"mouse_motion_to_scroll.speed": 100
+				},
+				"rules": []
+			},
+			"devices": [
+				{
+					"disable_built_in_keyboard_if_exists": false,
+					"fn_function_keys": [],
+					"identifiers": {
+						"is_keyboard": true,
+						"is_pointing_device": false,
+						"product_id": 0,
+						"vendor_id": 0
+					},
+					"ignore": false,
+					"manipulate_caps_lock_led": true,
+					"simple_modifications": [],
+					"treat_as_built_in_keyboard": false
+				},
+				{
+					"disable_built_in_keyboard_if_exists": false,
+					"fn_function_keys": [],
+					"identifiers": {
+						"is_keyboard": false,
+						"is_pointing_device": true,
+						"product_id": 0,
+						"vendor_id": 0
+					},
+					"ignore": true,
+					"manipulate_caps_lock_led": false,
+					"simple_modifications": [],
+					"treat_as_built_in_keyboard": false
+				},
+				{
+					"disable_built_in_keyboard_if_exists": false,
+					"fn_function_keys": [],
+					"identifiers": {
+						"is_keyboard": true,
+						"is_pointing_device": false,
+						"product_id": 8247,
+						"vendor_id": 9456
+					},
+					"ignore": false,
+					"manipulate_caps_lock_led": true,
+					"simple_modifications": [],
+					"treat_as_built_in_keyboard": false
+				},
+				{
+					"disable_built_in_keyboard_if_exists": false,
+					"fn_function_keys": [],
+					"identifiers": {
+						"is_keyboard": true,
+						"is_pointing_device": false,
+						"product_id": 1957,
+						"vendor_id": 1118
+					},
+					"ignore": false,
+					"manipulate_caps_lock_led": true,
+					"simple_modifications": [],
+					"treat_as_built_in_keyboard": false
+				},
+				{
+					"disable_built_in_keyboard_if_exists": false,
+					"fn_function_keys": [],
+					"identifiers": {
+						"is_keyboard": false,
+						"is_pointing_device": true,
+						"product_id": 1957,
+						"vendor_id": 1118
+					},
+					"ignore": true,
+					"manipulate_caps_lock_led": false,
+					"simple_modifications": [],
+					"treat_as_built_in_keyboard": false
+				},
+				{
+					"disable_built_in_keyboard_if_exists": false,
+					"fn_function_keys": [],
+					"identifiers": {
+						"is_keyboard": true,
+						"is_pointing_device": true,
+						"product_id": 61453,
+						"vendor_id": 65261
+					},
+					"ignore": true,
+					"manipulate_caps_lock_led": true,
+					"simple_modifications": [],
+					"treat_as_built_in_keyboard": false
+				},
+				{
+					"disable_built_in_keyboard_if_exists": false,
+					"fn_function_keys": [],
+					"identifiers": {
+						"is_keyboard": true,
+						"is_pointing_device": false,
+						"product_id": 48879,
+						"vendor_id": 65261
+					},
+					"ignore": false,
+					"manipulate_caps_lock_led": true,
+					"simple_modifications": [],
+					"treat_as_built_in_keyboard": false
+				},
+				{
+					"disable_built_in_keyboard_if_exists": false,
+					"fn_function_keys": [],
+					"identifiers": {
+						"is_keyboard": false,
+						"is_pointing_device": true,
+						"product_id": 48879,
+						"vendor_id": 65261
+					},
+					"ignore": true,
+					"manipulate_caps_lock_led": false,
+					"simple_modifications": [],
+					"treat_as_built_in_keyboard": false
+				}
+			],
+			"fn_function_keys": [
+				{
+					"from": {
+						"key_code": "f1"
+					},
+					"to": [
+						{
+							"consumer_key_code": "display_brightness_decrement"
+						}
+					]
+				},
+				{
+					"from": {
+						"key_code": "f2"
+					},
+					"to": [
+						{
+							"consumer_key_code": "display_brightness_increment"
+						}
+					]
+				},
+				{
+					"from": {
+						"key_code": "f3"
+					},
+					"to": [
+						{
+							"apple_vendor_keyboard_key_code": "mission_control"
+						}
+					]
+				},
+				{
+					"from": {
+						"key_code": "f4"
+					},
+					"to": [
+						{
+							"apple_vendor_keyboard_key_code": "spotlight"
+						}
+					]
+				},
+				{
+					"from": {
+						"key_code": "f5"
+					},
+					"to": [
+						{
+							"consumer_key_code": "dictation"
+						}
+					]
+				},
+				{
+					"from": {
+						"key_code": "f6"
+					},
+					"to": [
+						{
+							"key_code": "f6"
+						}
+					]
+				},
+				{
+					"from": {
+						"key_code": "f7"
+					},
+					"to": [
+						{
+							"consumer_key_code": "rewind"
+						}
+					]
+				},
+				{
+					"from": {
+						"key_code": "f8"
+					},
+					"to": [
+						{
+							"consumer_key_code": "play_or_pause"
+						}
+					]
+				},
+				{
+					"from": {
+						"key_code": "f9"
+					},
+					"to": [
+						{
+							"consumer_key_code": "fast_forward"
+						}
+					]
+				},
+				{
+					"from": {
+						"key_code": "f10"
+					},
+					"to": [
+						{
+							"consumer_key_code": "mute"
+						}
+					]
+				},
+				{
+					"from": {
+						"key_code": "f11"
+					},
+					"to": [
+						{
+							"consumer_key_code": "volume_decrement"
+						}
+					]
+				},
+				{
+					"from": {
+						"key_code": "f12"
+					},
+					"to": [
+						{
+							"consumer_key_code": "volume_increment"
+						}
+					]
+				}
+			],
+			"name": "Off",
+			"parameters": {
+				"delay_milliseconds_before_open_device": 1000
+			},
+			"selected": false,
+			"simple_modifications": [],
+			"virtual_hid_keyboard": {
+				"country_code": 0,
+				"indicate_sticky_modifier_keys_state": true,
+				"mouse_key_xy_scale": 100
+			}
+		}
+	]
+}

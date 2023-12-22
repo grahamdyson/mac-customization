@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>active</key>
+	<true/>
+	<key>addr</key>
+	<integer>0</integer>
+	<key>altid</key>
+	<integer>0</integer>
+	<key>app</key>
+	<string>Any Application</string>
+	<key>dev</key>
+	<string>DK4Q</string>
+	<key>exec</key>
+	<string></string>
+	<key>hid</key>
+	<dict>
+		<key>000C.00E9</key>
+		<dict>
+			<key>b</key>
+			<dict>
+				<key>axis</key>
+				<integer>0</integer>
+				<key>cmd</key>
+				<integer>30</integer>
+				<key>cnt</key>
+				<integer>255</integer>
+			</dict>
+		</dict>
+		<key>000C.00EA</key>
+		<dict>
+			<key>b</key>
+			<dict>
+				<key>axis</key>
+				<integer>0</integer>
+				<key>cmd</key>
+				<integer>30</integer>
+				<key>cnt</key>
+				<integer>-255</integer>
+			</dict>
+		</dict>
+	</dict>
+	<key>opt</key>
+	<dict>
+		<key>sens</key>
+		<integer>60</integer>
+	</dict>
+	<key>pid</key>
+	<integer>8247</integer>
+	<key>rel</key>
+	<integer>0</integer>
+	<key>sign</key>
+	<string></string>
+	<key>type</key>
+	<string>other</string>
+	<key>vers</key>
+	<integer>1</integer>
+	<key>vid</key>
+	<integer>9456</integer>
+</dict>
+</plist>

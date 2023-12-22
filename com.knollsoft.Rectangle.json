@@ -1,0 +1,69 @@
+{
+    NSNavLastRootDirectory = "~/Documents";
+    "NSWindow Frame NSNavPanelAutosaveName" = "864 911 328 195 0 0 2560 1415 ";
+    SUEnableAutomaticChecks = 0;
+    SUHasLaunchedBefore = 1;
+    allowAnyShortcut = 1;
+    alternateDefaultShortcuts = 1;
+    bottomHalf =     {
+    };
+    bottomLeft =     {
+    };
+    bottomRight =     {
+    };
+    center =     {
+    };
+    centerThird =     {
+    };
+    firstThird =     {
+    };
+    firstTwoThirds =     {
+    };
+    larger =     {
+    };
+    lastThird =     {
+    };
+    lastTwoThirds =     {
+    };
+    lastVersion = 75;
+    launchOnLogin = 1;
+    leftHalf =     {
+        keyCode = 123;
+        modifierFlags = 1966080;
+    };
+    maximize =     {
+        keyCode = 126;
+        modifierFlags = 1966080;
+    };
+    maximizeHeight =     {
+    };
+    nextDisplay =     {
+    };
+    previousDisplay =     {
+    };
+    reflowTodo =     {
+        keyCode = 45;
+        modifierFlags = 786432;
+    };
+    restore =     {
+    };
+    rightHalf =     {
+        keyCode = 124;
+        modifierFlags = 1966080;
+    };
+    smaller =     {
+    };
+    subsequentExecutionMode = 2;
+    toggleTodo =     {
+        keyCode = 11;
+        modifierFlags = 786432;
+    };
+    topHalf =     {
+    };
+    topLeft =     {
+    };
+    topRight =     {
+    };
+    unsnapRestore = 2;
+    windowSnapping = 2;
+}

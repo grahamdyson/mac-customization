@@ -1,0 +1,8 @@
+{
+	// home/end is defined here as it doesn't use a modifier key and Karabiner doesn't support different behavior for scrolling and input boxes e.g. in a Web Browser
+	"\UF729"  = moveToBeginningOfParagraph:; // home
+	"\UF72B"  = moveToEndOfParagraph:; // end
+
+	"$\UF729" = moveToBeginningOfLineAndModifySelection:; // shift+home
+	"$\UF72B" = moveToEndOfLineAndModifySelection:; // shift+hnd
+}

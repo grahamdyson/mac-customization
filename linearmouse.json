@@ -1,0 +1,70 @@
+{
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.9.3",
+  "schemes" : [
+    {
+      "buttons" : {
+        "mappings" : [
+          {
+            "action" : "media.volumeDown",
+            "option" : false,
+            "shift" : true,
+            "control" : false,
+            "command" : false,
+            "scroll" : "down"
+          },
+          {
+            "action" : "media.volumeUp",
+            "option" : false,
+            "shift" : true,
+            "control" : false,
+            "command" : false,
+            "scroll" : "up"
+          },
+          {
+            "action" : "display.brightnessDown",
+            "option" : true,
+            "shift" : false,
+            "control" : false,
+            "command" : false,
+            "scroll" : "down"
+          },
+          {
+            "action" : "display.brightnessUp",
+            "option" : true,
+            "shift" : false,
+            "control" : false,
+            "command" : false,
+            "scroll" : "up"
+          }
+        ]
+      },
+      "if" : {
+        "device" : {
+          "productName" : "VirtualHID",
+          "serialNumber" : "0001",
+          "productID" : "0xf00d",
+          "category" : "mouse",
+          "vendorID" : "0xfeed"
+        }
+      },
+      "scrolling" : {
+        "modifiers" : {
+          "vertical" : {
+            "option" : {
+              "type" : "auto"
+            },
+            "shift" : {
+              "type" : "auto"
+            },
+            "control" : {
+              "type" : "zoom"
+            },
+            "command" : {
+              "type" : "alterOrientation"
+            }
+          }
+        }
+      }
+    }
+  ]
+}
