@@ -22,6 +22,8 @@ export WORDCHARS=''
 alias bastion1='ssh -i ~/.ssh/stronghold gdyson@secure-bastion-01.cs.aws-ue1.usp.czrs.io'
 alias bastion2='ssh -i ~/.ssh/stronghold gdyson@secure-bastion-02.cs.aws-ue1.usp.czrs.io'
 
+alias braved='open -n -a /Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browser --args http://localhost:3000 --user-data-dir="/Users/gdyson/Library/Application Support/BraveSoftware/Brave-Browser/Profile 4" --disable-web-security'
+
 frp () {
   DEVICE_ID=$1
   NAMESPACE=$2

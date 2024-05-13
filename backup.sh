@@ -19,7 +19,6 @@ cp ~/"Library/Application Support/Code/User/keybindings.json" Code-User
 cp ~/"Library/Application Support/Code/User/settings.json" Code-User
 
 rm -rf "GIMP"
-mkdir "GIMP"
 cp -rf ~/"Library/Application Support/GIMP/2.10" ./GIMP
 rm -rf ./GIMP/cache
 
