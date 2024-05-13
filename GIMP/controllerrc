@@ -1,0 +1,30 @@
+# GIMP controllerrc
+# 
+# This file will be entirely rewritten each time you exit.
+
+(GimpControllerInfo "Main Mouse Wheel"
+    (icon-name "gimp-controller-wheel")
+    (enabled yes)
+    (debug-events no)
+    (controller "GimpControllerWheel")
+    (mapping))
+(GimpControllerInfo "Main Keyboard"
+    (icon-name "gimp-controller-keyboard")
+    (enabled yes)
+    (debug-events no)
+    (controller "GimpControllerKeyboard")
+    (mapping
+        (map "cursor-right-alt" "tools-size-increase")
+        (map "cursor-left-shift" "view-scroll-page-left")
+        (map "cursor-right-shift" "view-scroll-page-right")
+        (map "cursor-up-shift" "view-scroll-page-up")
+        (map "cursor-up-primary" "view-scroll-top-border")
+        (map "cursor-down-primary" "view-scroll-bottom-border")
+        (map "cursor-up-alt" "tools-size-increase-skip")
+        (map "cursor-left-alt" "tools-size-decrease")
+        (map "cursor-down-shift" "view-scroll-page-down")
+        (map "cursor-right-primary" "view-scroll-right-border")
+        (map "cursor-left-primary" "view-scroll-left-border")
+        (map "cursor-down-alt" "tools-size-decrease-skip")))
+
+# end of controllerrc

@@ -13,19 +13,22 @@ rm -rf ."talon user"
 mkdir ".talon user"
 cp -rf ~/.talon/user/ "./.talon user/"
 
-rm -rf "Library Application Support Code User"
-mkdir "Library Application Support Code User"
-cp ~/"Library/Application Support/Code/User/keybindings.json" "Library Application Support Code User"
-cp ~/"Library/Application Support/Code/User/settings.json" "Library Application Support Code User"
+rm -rf "Code-User"
+mkdir "Code-User"
+cp ~/"Library/Application Support/Code/User/keybindings.json" Code-User
+cp ~/"Library/Application Support/Code/User/settings.json" Code-User
 
-rm -rf ".config Pinta"
-mkdir ".config Pinta"
-cp -rf ~/.config/Pinta/ ".config Pinta"
+rm -rf "GIMP"
+mkdir "GIMP"
+cp -rf ~/"Library/Application Support/GIMP/2.10" ./GIMP
+rm -rf ./GIMP/cache
 
-echo previous backups
-ls "/Volumes/OneDrive/Computers and electronics/Mac Customisation"
+BACKUP_PATH="/Users/gdyson/Library/CloudStorage/OneDrive-Personal/Computers and electronics/Mac Customisation"
 
-cp -rf . "/Volumes/OneDrive/Computers and electronics/Mac Customisation/backup $(date '+%Y-%m-%d %H:%M:%S')"
+echo "backups (before)"
+ls "$BACKUP_PATH"
 
-echo new backups
-ls "/Volumes/OneDrive/Computers and electronics/Mac Customisation"
+cp -rf . "$BACKUP_PATH/backup $(date '+%Y-%m-%d %H-%M-%S')"
+
+echo "backups (after)"
+ls "$BACKUP_PATH"

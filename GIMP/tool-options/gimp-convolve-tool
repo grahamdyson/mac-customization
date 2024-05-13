@@ -1,0 +1,10 @@
+# GIMP gimp-convolve-tool options
+
+(foreground (color-rgb 0.039215687662363052 0.12156862765550613 0.11372549086809158))
+(brush "2. Hardness 050")
+(dynamics "Pressure Opacity")
+(palette "Colour History")
+(brush-size 1)
+(brush-hardness 0.5)
+
+# end of gimp-convolve-tool options

@@ -1,70 +1,73 @@
 {
-  "$schema" : "https:\/\/schema.linearmouse.app\/0.9.3",
   "schemes" : [
     {
+      "if" : {
+        "device" : {
+          "productID" : "0xfff0",
+          "vendorID" : "0x47d",
+          "serialNumber" : "kensington.com:VirtualHIDPointing",
+          "category" : "mouse",
+          "productName" : "tbwDKPointer  v.0.2.0 "
+        }
+      },
       "buttons" : {
         "mappings" : [
           {
+            "command" : false,
+            "control" : false,
             "action" : "media.volumeDown",
+            "scroll" : "down",
             "option" : false,
-            "shift" : true,
-            "control" : false,
-            "command" : false,
-            "scroll" : "down"
+            "shift" : true
           },
           {
+            "control" : false,
             "action" : "media.volumeUp",
+            "scroll" : "up",
+            "command" : false,
             "option" : false,
-            "shift" : true,
-            "control" : false,
-            "command" : false,
-            "scroll" : "up"
+            "shift" : true
           },
           {
+            "command" : false,
+            "control" : false,
+            "shift" : false,
             "action" : "display.brightnessDown",
-            "option" : true,
-            "shift" : false,
-            "control" : false,
-            "command" : false,
-            "scroll" : "down"
+            "scroll" : "down",
+            "option" : true
           },
           {
-            "action" : "display.brightnessUp",
-            "option" : true,
+            "scroll" : "up",
             "shift" : false,
-            "control" : false,
+            "option" : true,
+            "action" : "display.brightnessUp",
             "command" : false,
-            "scroll" : "up"
+            "control" : false
           }
         ]
       },
-      "if" : {
-        "device" : {
-          "productName" : "VirtualHID",
-          "serialNumber" : "0001",
-          "productID" : "0xf00d",
-          "category" : "mouse",
-          "vendorID" : "0xfeed"
-        }
-      },
       "scrolling" : {
+        "speed" : 0,
         "modifiers" : {
           "vertical" : {
+            "control" : {
+              "type" : "zoom"
+            },
             "option" : {
               "type" : "auto"
             },
             "shift" : {
               "type" : "auto"
             },
-            "control" : {
-              "type" : "zoom"
-            },
             "command" : {
               "type" : "alterOrientation"
             }
           }
-        }
+        },
+        "acceleration" : 1,
+        "distance" : "auto"
       }
     }
-  ]
+  ],
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.9.5"
 }

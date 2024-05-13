@@ -497,17 +497,7 @@
 		"command": "editor.action.deleteLines",
 		"when": "textInputFocus && !editorReadonly"
 	},
-	{
-		"key": "f7",
-		"command": "editor.action.diffReview.next",
-		"when": "isInDiffEditor"
-	},
-	{
-		"key": "shift+f7",
-		"command": "editor.action.diffReview.prev",
-		"when": "isInDiffEditor"
-	},
-	{
+  {
 		"key": "cmd+f3",
 		"command": "editor.action.dirtydiff.next",
 		"when": "editorTextFocus && !textCompareEditorActive"
@@ -4203,5 +4193,25 @@
 		"key": "cmd+k",
 		"command": "-workbench.action.terminal.clear",
 		"when": "terminalFocus && terminalHasBeenCreated && !accessibilityModeEnabled || terminalFocus && terminalProcessSupported && !accessibilityModeEnabled"
+  },
+  {
+    "key": "f7",
+    "command": "-editor.action.diffReview.next",
+    "when": "isInDiffEditor"
+  },
+  {
+    "key": "shift+f7",
+    "command": "-editor.action.diffReview.prev",
+    "when": "isInDiffEditor"
+  },
+  {
+		"key": "f7",
+		"command": "workbench.action.editor.nextChange",
+		"when": "editorTextFocus && !textCompareEditorActive"
+	},
+	{
+		"key": "shift+f7",
+		"command": "workbench.action.editor.previousChange",
+		"when": "editorTextFocus && !textCompareEditorActive"
 	}
 ]
