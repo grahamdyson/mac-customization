@@ -497,17 +497,7 @@
 		"command": "editor.action.deleteLines",
 		"when": "textInputFocus && !editorReadonly"
 	},
-	{
-		"key": "f7",
-		"command": "editor.action.diffReview.next",
-		"when": "isInDiffEditor"
-	},
-	{
-		"key": "shift+f7",
-		"command": "editor.action.diffReview.prev",
-		"when": "isInDiffEditor"
-	},
-	{
+  {
 		"key": "cmd+f3",
 		"command": "editor.action.dirtydiff.next",
 		"when": "editorTextFocus && !textCompareEditorActive"
@@ -898,16 +888,6 @@
 		"key": "ctrl+shift+space",
 		"command": "editor.action.triggerParameterHints",
 		"when": "editorHasSignatureHelpProvider && editorTextFocus"
-	},
-	{
-		"key": "ctrl+i",
-		"command": "editor.action.triggerSuggest",
-		"when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
-	},
-	{
-		"key": "ctrl+space",
-		"command": "editor.action.triggerSuggest",
-		"when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
 	},
 	{
 		"key": "ctrl+k ctrl+x",
@@ -1439,17 +1419,7 @@
 		"command": "acceptSelectedSuggestion",
 		"when": "acceptSuggestionOnEnter && suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && suggestionMakesTextEdit && textInputFocus"
 	},
-	{
-		"key": "ctrl+i",
-		"command": "focusSuggestion",
-		"when": "suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
-	},
-	{
-		"key": "ctrl+space",
-		"command": "focusSuggestion",
-		"when": "suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
-	},
-	{
+  {
 		"key": "shift+escape",
 		"command": "hideSuggestWidget",
 		"when": "suggestWidgetVisible && textInputFocus"
@@ -1513,21 +1483,6 @@
 		"key": "up",
 		"command": "selectPrevSuggestion",
 		"when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
-	},
-	{
-		"key": "ctrl+i",
-		"command": "toggleSuggestionDetails",
-		"when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"
-	},
-	{
-		"key": "ctrl+space",
-		"command": "toggleSuggestionDetails",
-		"when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"
-	},
-	{
-		"key": "ctrl+cmd+space",
-		"command": "toggleSuggestionFocus",
-		"when": "suggestWidgetVisible && textInputFocus"
 	},
 	{
 		"key": "enter",
@@ -4044,11 +3999,6 @@
         "when": "inDebugMode"
     },
     {
-        "key": "ctrl+cmd+space",
-        "command": "editor.action.triggerSuggest",
-        "when": "editorHasCompletionItemProvider && editorTextFocus && !editorReadonly"
-    },
-    {
         "key": "ctrl+delete",
         "command": "deleteWordEndRight",
         "when": "editorTextFocus && !editorReadonly"
@@ -4203,5 +4153,40 @@
 		"key": "cmd+k",
 		"command": "-workbench.action.terminal.clear",
 		"when": "terminalFocus && terminalHasBeenCreated && !accessibilityModeEnabled || terminalFocus && terminalProcessSupported && !accessibilityModeEnabled"
-	}
+  },
+  {
+    "key": "f7",
+    "command": "-editor.action.diffReview.next",
+    "when": "isInDiffEditor"
+  },
+  {
+    "key": "shift+f7",
+    "command": "-editor.action.diffReview.prev",
+    "when": "isInDiffEditor"
+  },
+  {
+		"key": "f7",
+		"command": "workbench.action.editor.nextChange",
+		"when": "editorTextFocus && !textCompareEditorActive"
+	},
+	{
+		"key": "shift+f7",
+		"command": "workbench.action.editor.previousChange",
+		"when": "editorTextFocus && !textCompareEditorActive"
+  },
+  {
+    "key": "ctrl+space",
+    "command": "workbench.action.focusActiveEditorGroup",
+		"when": "!editorTextFocus"
+},
+{
+	"key": "ctrl+enter",
+	"command": "rest-client.request",
+	"when": "editorTextFocus && editorLangId == 'http'"
+},
+{
+	"key": "alt+cmd+r",
+	"command": "-rest-client.request",
+	"when": "editorTextFocus && editorLangId == 'http'"
+}
 ]

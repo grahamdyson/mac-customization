@@ -3,8 +3,7 @@
 	"cSpell.enableFiletypes": [
 		"scminput"
 	],
-	"debug.allowBreakpointsEverywhere": true,
-  "diffEditor.ignoreTrimWhitespace": false,
+  "debug.allowBreakpointsEverywhere": true,
 	"editor.accessibilitySupport": "off",
 	"editor.autoClosingBrackets": "never",
 	"editor.fontLigatures": true,
@@ -31,11 +30,10 @@
 	"sync.autoDownload": true,
 	"sync.autoUpload": true,
 	"sync.gist": "15113eaec5c9816bc83efbdcce3561c9",
-	"terminal.integrated.scrollback": 16000,
+	"terminal.integrated.scrollback": 200000,
 	"terminal.integrated.shell.windows": "C:\\Program Files\\Git\\git-cmd.exe",
 	"terminal.integrated.shellArgs.windows": [ "--command=usr/bin/bash.exe", "-l", "-i" ],
   "window.menuBarVisibility": "visible",
-	"workbench.activityBar.visible": true,
 	"workbench.colorCustomizations": {
 		"focusBorder": "#569cd6",
 		"inputOption.activeBorder": "#569cd6",
@@ -67,8 +65,8 @@
 	"**/jest-cache": true
 },
 "workbench.editorAssociations": {
-	"git-rebase-todo": "default",
-	"*.ipynb": "jupyter-notebook"
+  "git-rebase-todo": "default",
+  "*.ipynb": "jupyter-notebook"
 },
 "gitlens.views.branches.files.layout": "tree",
 "gitlens.views.commits.files.layout": "tree",
@@ -102,20 +100,12 @@
 	"editor.defaultFormatter": "vscode.typescript-language-features"
 },
 "debug.openDebug": "neverOpen",
-"window.autoDetectColorScheme": true,
-"editor.fontSize": 13,
 "terminal.integrated.fontSize": 13,
 "markdown.preview.fontSize": 13,
 "debug.console.fontSize": 13,
-"[html]": {
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
-},
 "vscode-edge-devtools.fallbackRevision": "@a41122be052fe9616f0def5fe6842fa942930d46",
 "debug.javascript.suggestPrettyPrinting": false,
 "git.mergeEditor": false,
-"[css]": {
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
-},
 "editor.renderControlCharacters": false,
 "javascript.preferences.useAliasesForRenames": false,
 "javascript.updateImportsOnFileMove.enabled": "never",
@@ -140,5 +130,25 @@
 "[svg]": {
 	"editor.defaultFormatter": "jock.svg"
 },
-"java.inlayHints.parameterNames.enabled": "none"
+"java.inlayHints.parameterNames.enabled": "none",
+"diffEditor.ignoreTrimWhitespace": false,
+"diffEditor.maxComputationTime": 0,
+"editor.stickyScroll.enabled": true,
+"terminal.integrated.mouseWheelScrollSensitivity": 0.5,
+"editor.mouseWheelScrollSensitivity": 0.5,
+"window.autoDetectColorScheme": true,
+"editor.fontSize": 13,
+"gitlens.views.commitDetails.files.layout": "tree",
+"rest-client.previewResponsePanelTakeFocus": false,
+"rest-client.requestNameAsResponseTabTitle": true,
+"workbench.editor.openSideBySideDirection": "down",
+"rest-client.enableTelemetry": false,
+"rest-client.logLevel": "verbose",
+"javascript.autoClosingTags": false,
+"typescript.autoClosingTags": false,
+"html.autoClosingTags": false,
+"editor.acceptSuggestionOnCommitCharacter": false,
+"explorer.openEditors.visible": 1,
+"workbench.colorTheme": "Default Light Modern",
+"window.zoomLevel": -0.9
 }

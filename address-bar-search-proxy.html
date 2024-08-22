@@ -1,0 +1,11 @@
+<html>
+	<script>
+		const text = window.location.search.substring(1);
+		if (text) {
+			window.location =
+				text.includes('+') || !text.includes('.')
+				? `https://google.com/search?q=${text}`
+				: `http://${decodeURIComponent(text)}`;
+		}
+	</script>
+</html>

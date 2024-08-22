@@ -1,4 +1,5 @@
 brew install --cask alt-tab
+brew install --cask betterdisplay
 brew install --cask graphviz
 brew install --cask grep
 brew install --cask iterm2

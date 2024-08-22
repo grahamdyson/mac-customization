@@ -1,69 +1,140 @@
 {
-  "$schema" : "https:\/\/schema.linearmouse.app\/0.9.3",
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.9.5",
   "schemes" : [
     {
-      "buttons" : {
-        "mappings" : [
-          {
-            "action" : "media.volumeDown",
-            "option" : false,
-            "shift" : true,
-            "control" : false,
-            "command" : false,
-            "scroll" : "down"
-          },
-          {
-            "action" : "media.volumeUp",
-            "option" : false,
-            "shift" : true,
-            "control" : false,
-            "command" : false,
-            "scroll" : "up"
-          },
-          {
-            "action" : "display.brightnessDown",
-            "option" : true,
-            "shift" : false,
-            "control" : false,
-            "command" : false,
-            "scroll" : "down"
-          },
-          {
-            "action" : "display.brightnessUp",
-            "option" : true,
-            "shift" : false,
-            "control" : false,
-            "command" : false,
-            "scroll" : "up"
-          }
-        ]
-      },
       "if" : {
         "device" : {
-          "productName" : "VirtualHID",
-          "serialNumber" : "0001",
-          "productID" : "0xf00d",
+          "productID" : "0xfff0",
+          "productName" : "tbwDKPointer  v.0.2.0 ",
+          "serialNumber" : "kensington.com:VirtualHIDPointing",
           "category" : "mouse",
-          "vendorID" : "0xfeed"
+          "vendorID" : "0x47d"
         }
       },
       "scrolling" : {
+        "speed" : 0,
         "modifiers" : {
           "vertical" : {
+            "control" : {
+              "type" : "zoom"
+            },
             "option" : {
               "type" : "auto"
             },
             "shift" : {
               "type" : "auto"
             },
-            "control" : {
-              "type" : "zoom"
-            },
             "command" : {
               "type" : "alterOrientation"
             }
           }
+        },
+        "acceleration" : 1,
+        "distance" : "auto"
+      },
+      "buttons" : {
+        "mappings" : [
+          {
+            "shift" : true,
+            "scroll" : "down",
+            "control" : false,
+            "option" : false,
+            "command" : false,
+            "action" : "media.volumeDown"
+          },
+          {
+            "command" : false,
+            "control" : false,
+            "shift" : true,
+            "option" : false,
+            "action" : "media.volumeUp",
+            "scroll" : "up"
+          },
+          {
+            "command" : false,
+            "control" : false,
+            "action" : "display.brightnessDown",
+            "scroll" : "down",
+            "shift" : false,
+            "option" : true
+          },
+          {
+            "shift" : false,
+            "option" : true,
+            "scroll" : "up",
+            "control" : false,
+            "command" : false,
+            "action" : "display.brightnessUp"
+          }
+        ]
+      }
+    },
+    {
+      "scrolling" : {
+        "speed" : 0,
+        "acceleration" : 1,
+        "modifiers" : {
+          "vertical" : {
+            "shift" : {
+              "type" : "auto"
+            },
+            "command" : {
+              "type" : "alterOrientation"
+            },
+            "option" : {
+              "type" : "auto"
+            },
+            "control" : {
+              "type" : "zoom"
+            }
+          }
+        },
+        "distance" : "auto"
+      },
+      "if" : {
+        "device" : {
+          "category" : "mouse",
+          "vendorID" : "0x16c0",
+          "productName" : "Karabiner DriverKit VirtualHIDPointing 1.7.0",
+          "productID" : "0x27da",
+          "serialNumber" : "pqrs.org:Karabiner-DriverKit-VirtualHIDPointing"
         }
+      },
+      "buttons" : {
+        "mappings" : [
+          {
+            "action" : "media.volumeDown",
+            "option" : false,
+            "control" : false,
+            "command" : false,
+            "shift" : true,
+            "scroll" : "down"
+          },
+          {
+            "command" : false,
+            "scroll" : "up",
+            "action" : "media.volumeUp",
+            "shift" : true,
+            "option" : false,
+            "control" : false
+          },
+          {
+            "action" : "display.brightnessDown",
+            "command" : false,
+            "option" : true,
+            "shift" : false,
+            "control" : false,
+            "scroll" : "down"
+          },
+          {
+            "shift" : false,
+            "option" : true,
+            "control" : false,
+            "command" : false,
+            "action" : "display.brightnessUp",
+            "scroll" : "up"
+          }
+        ]
       }
     }
   ]

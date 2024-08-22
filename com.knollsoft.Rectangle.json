@@ -1,6 +1,7 @@
 {
-    NSNavLastRootDirectory = "~/Documents";
-    "NSWindow Frame NSNavPanelAutosaveName" = "864 911 328 195 0 0 2560 1415 ";
+    NSNavLastRootDirectory = "~/Documents/Mac Customisation";
+    NSNavPanelExpandedStateForSaveMode = 1;
+    "NSWindow Frame NSNavPanelAutosaveName" = "560 400 800 448 0 0 1920 1055 ";
     SUEnableAutomaticChecks = 0;
     SUHasLaunchedBefore = 1;
     allowAnyShortcut = 1;
@@ -12,6 +13,8 @@
     bottomRight =     {
     };
     center =     {
+        keyCode = 49;
+        modifierFlags = 524288;
     };
     centerThird =     {
     };
@@ -65,5 +68,5 @@
     topRight =     {
     };
     unsnapRestore = 2;
-    windowSnapping = 2;
+    windowSnapping = 1;
 }

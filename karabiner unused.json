@@ -1,0 +1,19 @@
+{
+	"description": "right shift & play sound",
+	"manipulators": [
+		{
+			"from": {
+				"key_code": "right_shift",
+				"modifiers": {
+					"optional": ["any"]
+				}
+			},
+			"to": [
+				{ "shell_command": " /opt/homebrew/bin/ffplay -autoexit -nodisp -loglevel quiet /System/Library/Sounds/Sosumi.aiff" },
+				{ "key_code": "right_shift" }
+	  
+			],
+			"type": "basic"
+		}
+	]
+},
