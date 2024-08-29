@@ -4,75 +4,73 @@
     {
       "if" : {
         "device" : {
-          "productID" : "0xfff0",
           "productName" : "tbwDKPointer  v.0.2.0 ",
-          "serialNumber" : "kensington.com:VirtualHIDPointing",
+          "vendorID" : "0x47d",
+          "productID" : "0xfff0",
           "category" : "mouse",
-          "vendorID" : "0x47d"
+          "serialNumber" : "kensington.com:VirtualHIDPointing"
         }
-      },
-      "scrolling" : {
-        "speed" : 0,
-        "modifiers" : {
-          "vertical" : {
-            "control" : {
-              "type" : "zoom"
-            },
-            "option" : {
-              "type" : "auto"
-            },
-            "shift" : {
-              "type" : "auto"
-            },
-            "command" : {
-              "type" : "alterOrientation"
-            }
-          }
-        },
-        "acceleration" : 1,
-        "distance" : "auto"
       },
       "buttons" : {
         "mappings" : [
           {
+            "option" : false,
             "shift" : true,
             "scroll" : "down",
-            "control" : false,
-            "option" : false,
             "command" : false,
+            "control" : false,
             "action" : "media.volumeDown"
           },
           {
             "command" : false,
-            "control" : false,
             "shift" : true,
+            "control" : false,
             "option" : false,
             "action" : "media.volumeUp",
             "scroll" : "up"
           },
           {
-            "command" : false,
-            "control" : false,
-            "action" : "display.brightnessDown",
-            "scroll" : "down",
-            "shift" : false,
-            "option" : true
-          },
-          {
             "shift" : false,
             "option" : true,
-            "scroll" : "up",
             "control" : false,
+            "command" : false,
+            "scroll" : "down",
+            "action" : "display.brightnessDown"
+          },
+          {
+            "control" : false,
+            "shift" : false,
+            "scroll" : "up",
+            "option" : true,
             "command" : false,
             "action" : "display.brightnessUp"
           }
         ]
+      },
+      "scrolling" : {
+        "acceleration" : 1,
+        "modifiers" : {
+          "vertical" : {
+            "shift" : {
+              "type" : "auto"
+            },
+            "option" : {
+              "type" : "auto"
+            },
+            "command" : {
+              "type" : "alterOrientation"
+            },
+            "control" : {
+              "type" : "zoom"
+            }
+          }
+        },
+        "distance" : "auto",
+        "speed" : 0
       }
     },
     {
       "scrolling" : {
-        "speed" : 0,
-        "acceleration" : 1,
         "modifiers" : {
           "vertical" : {
             "shift" : {
@@ -81,60 +79,62 @@
             "command" : {
               "type" : "alterOrientation"
             },
-            "option" : {
-              "type" : "auto"
-            },
             "control" : {
               "type" : "zoom"
+            },
+            "option" : {
+              "type" : "auto"
             }
           }
         },
+        "speed" : 0,
+        "acceleration" : 1,
         "distance" : "auto"
-      },
-      "if" : {
-        "device" : {
-          "category" : "mouse",
-          "vendorID" : "0x16c0",
-          "productName" : "Karabiner DriverKit VirtualHIDPointing 1.7.0",
-          "productID" : "0x27da",
-          "serialNumber" : "pqrs.org:Karabiner-DriverKit-VirtualHIDPointing"
-        }
       },
       "buttons" : {
         "mappings" : [
           {
             "action" : "media.volumeDown",
-            "option" : false,
-            "control" : false,
+            "scroll" : "down",
             "command" : false,
-            "shift" : true,
-            "scroll" : "down"
-          },
-          {
-            "command" : false,
-            "scroll" : "up",
-            "action" : "media.volumeUp",
             "shift" : true,
             "option" : false,
             "control" : false
           },
           {
-            "action" : "display.brightnessDown",
+            "scroll" : "up",
             "command" : false,
-            "option" : true,
-            "shift" : false,
             "control" : false,
-            "scroll" : "down"
+            "action" : "media.volumeUp",
+            "shift" : true,
+            "option" : false
           },
           {
+            "control" : false,
+            "action" : "display.brightnessDown",
+            "scroll" : "down",
+            "command" : false,
             "shift" : false,
+            "option" : true
+          },
+          {
+            "command" : false,
             "option" : true,
             "control" : false,
-            "command" : false,
             "action" : "display.brightnessUp",
-            "scroll" : "up"
+            "scroll" : "up",
+            "shift" : false
           }
         ]
+      },
+      "if" : {
+        "device" : {
+          "serialNumber" : "pqrs.org:Karabiner-DriverKit-VirtualHIDPointing",
+          "vendorID" : "0x16c0",
+          "category" : "mouse",
+          "productName" : "Karabiner DriverKit VirtualHIDPointing 1.7.0",
+          "productID" : "0x27da"
+        }
       }
     }
   ]
