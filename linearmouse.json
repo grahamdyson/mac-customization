@@ -1,141 +1,163 @@
 {
-  "$schema" : "https:\/\/schema.linearmouse.app\/0.9.5",
   "schemes" : [
     {
-      "if" : {
-        "device" : {
-          "productName" : "tbwDKPointer  v.0.2.0 ",
-          "vendorID" : "0x47d",
-          "productID" : "0xfff0",
-          "category" : "mouse",
-          "serialNumber" : "kensington.com:VirtualHIDPointing"
-        }
-      },
       "buttons" : {
         "mappings" : [
           {
-            "option" : false,
             "shift" : true,
-            "scroll" : "down",
-            "command" : false,
+            "option" : false,
             "control" : false,
-            "action" : "media.volumeDown"
+            "action" : "media.volumeDown",
+            "command" : false,
+            "scroll" : "down"
           },
           {
+            "control" : false,
             "command" : false,
             "shift" : true,
-            "control" : false,
-            "option" : false,
-            "action" : "media.volumeUp",
-            "scroll" : "up"
-          },
-          {
-            "shift" : false,
-            "option" : true,
-            "control" : false,
-            "command" : false,
-            "scroll" : "down",
-            "action" : "display.brightnessDown"
-          },
-          {
-            "control" : false,
-            "shift" : false,
             "scroll" : "up",
-            "option" : true,
+            "action" : "media.volumeUp",
+            "option" : false
+          },
+          {
+            "action" : "display.brightnessDown",
             "command" : false,
-            "action" : "display.brightnessUp"
+            "option" : true,
+            "shift" : false,
+            "scroll" : "down",
+            "control" : false
+          },
+          {
+            "control" : false,
+            "shift" : false,
+            "action" : "display.brightnessUp",
+            "command" : false,
+            "option" : true,
+            "scroll" : "up"
           }
         ]
       },
+      "if" : {
+        "device" : {
+          "productName" : "tbwDKPointer  v.0.2.0 ",
+          "serialNumber" : "kensington.com:VirtualHIDPointing",
+          "category" : "mouse",
+          "vendorID" : "0x47d",
+          "productID" : "0xfff0"
+        }
+      },
       "scrolling" : {
         "acceleration" : 1,
+        "distance" : "auto",
         "modifiers" : {
           "vertical" : {
             "shift" : {
               "type" : "auto"
             },
-            "option" : {
-              "type" : "auto"
+            "control" : {
+              "type" : "zoom"
             },
             "command" : {
               "type" : "alterOrientation"
             },
-            "control" : {
-              "type" : "zoom"
+            "option" : {
+              "type" : "auto"
             }
           }
         },
-        "distance" : "auto",
         "speed" : 0
       }
     },
     {
       "scrolling" : {
+        "acceleration" : 1,
+        "distance" : "auto",
         "modifiers" : {
           "vertical" : {
-            "shift" : {
-              "type" : "auto"
-            },
             "command" : {
               "type" : "alterOrientation"
             },
-            "control" : {
-              "type" : "zoom"
-            },
             "option" : {
               "type" : "auto"
+            },
+            "shift" : {
+              "type" : "auto"
+            },
+            "control" : {
+              "type" : "zoom"
             }
           }
         },
-        "speed" : 0,
-        "acceleration" : 1,
-        "distance" : "auto"
+        "speed" : 0
       },
       "buttons" : {
         "mappings" : [
           {
-            "action" : "media.volumeDown",
+            "control" : false,
             "scroll" : "down",
-            "command" : false,
+            "action" : "media.volumeDown",
             "shift" : true,
-            "option" : false,
-            "control" : false
+            "command" : false,
+            "option" : false
           },
           {
             "scroll" : "up",
             "command" : false,
-            "control" : false,
+            "option" : false,
             "action" : "media.volumeUp",
             "shift" : true,
-            "option" : false
+            "control" : false
           },
           {
-            "control" : false,
-            "action" : "display.brightnessDown",
-            "scroll" : "down",
             "command" : false,
+            "control" : false,
+            "scroll" : "down",
+            "action" : "display.brightnessDown",
             "shift" : false,
             "option" : true
           },
           {
-            "command" : false,
-            "option" : true,
-            "control" : false,
             "action" : "display.brightnessUp",
             "scroll" : "up",
-            "shift" : false
+            "command" : false,
+            "shift" : false,
+            "option" : true,
+            "control" : false
           }
         ]
       },
       "if" : {
         "device" : {
-          "serialNumber" : "pqrs.org:Karabiner-DriverKit-VirtualHIDPointing",
-          "vendorID" : "0x16c0",
+          "productID" : "0x27da",
           "category" : "mouse",
           "productName" : "Karabiner DriverKit VirtualHIDPointing 1.7.0",
-          "productID" : "0x27da"
+          "serialNumber" : "pqrs.org:Karabiner-DriverKit-VirtualHIDPointing",
+          "vendorID" : "0x16c0"
         }
       }
+    },
+    {
+      "if" : {
+        "device" : {
+          "productName" : "Apple Internal Keyboard \/ Trackpad",
+          "vendorID" : "0x0",
+          "productID" : "0x0",
+          "category" : "trackpad"
+        }
+      },
+      "buttons" : {
+        "mappings" : [
+          {
+            "option" : false,
+            "command" : false,
+            "control" : true,
+            "shift" : false,
+            "button" : 0,
+            "action" : "mouse.button.middle"
+          }
+        ]
+      }
     }
-  ]
+  ],
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.9.5"
 }

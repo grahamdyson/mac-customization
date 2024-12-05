@@ -1279,7 +1279,7 @@
                         ]
                     },
                     {
-                        "description": "ctrl+mouse button 1 | cmd+mouse button 1",
+                        "description": "ctrl+mouse button 1 | cmd+mouse button 1 (does not work on apple trackpad)",
                         "manipulators": [
                             {
                                 "from": {
@@ -1299,19 +1299,6 @@
                 ]
             },
             "devices": [
-                {
-                    "identifiers": { "is_keyboard": true },
-                    "simple_modifications": [
-                        {
-                            "from": { "key_code": "grave_accent_and_tilde" },
-                            "to": [{ "key_code": "non_us_backslash" }]
-                        },
-                        {
-                            "from": { "key_code": "non_us_backslash" },
-                            "to": [{ "key_code": "grave_accent_and_tilde" }]
-                        }
-                    ]
-                },
                 {
                     "identifiers": {
                         "is_keyboard": true,
@@ -1419,7 +1406,20 @@
                             "to": [{ "pointing_button": "button1" }]
                         }
                     ]
-                }
+                },
+                {
+                  "identifiers": { "is_keyboard": true },
+                  "simple_modifications": [
+                      {
+                          "from": { "key_code": "grave_accent_and_tilde" },
+                          "to": [{ "key_code": "non_us_backslash" }]
+                      },
+                      {
+                          "from": { "key_code": "non_us_backslash" },
+                          "to": [{ "key_code": "grave_accent_and_tilde" }]
+                      }
+                  ]
+              }
             ],
             "name": "Windows Like",
             "selected": true

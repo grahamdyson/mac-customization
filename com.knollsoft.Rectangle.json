@@ -1,6 +1,7 @@
 {
     NSNavLastRootDirectory = "~/Documents/Mac Customisation";
     NSNavPanelExpandedStateForSaveMode = 1;
+    "NSStatusItem Preferred Position Item-0" = 531;
     "NSWindow Frame NSNavPanelAutosaveName" = "560 400 800 448 0 0 1920 1055 ";
     SUEnableAutomaticChecks = 0;
     SUHasLaunchedBefore = 1;

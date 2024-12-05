@@ -149,6 +149,13 @@
 "html.autoClosingTags": false,
 "editor.acceptSuggestionOnCommitCharacter": false,
 "explorer.openEditors.visible": 1,
-"workbench.colorTheme": "Default Light Modern",
-"window.zoomLevel": -0.9
+"window.zoomLevel": 0.1,
+"editor.autoClosingQuotes": "beforeWhitespace",
+"rest-client.largeResponseBodySizeLimitInMB": 10,
+"gitlens.remotes": [
+  {
+    "domain": "github.caesars.com",
+    "type": "GitHub"
+  }
+]
 }
